@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Payments from './Payments';
@@ -13,27 +13,30 @@ class Header extends Component {
                     <li><a href="/auth/google">Login With Google</a></li>
                 );
             default:
-                return [<li><Payments /></li>,
-                    <li><a href="/api/logout">Logout</a></li>
-                ];
+                return (
+                    <Fragment>
+                        <li><Payments /></li>
+                        <li><a href="/api/logout">Logout</a></li>
+                    </Fragment>
+                );
         }
     }
 
     render(){
         return(
-                <nav>
-                    <div className="nav-wrapper">
-                        <Link
-                            to={this.props.auth ? '/surveys' : '/'}
-                            className="left brand-logo"
-                        >
-                            Emaily
-                        </Link>
-                        <ul id="nav-mobile" className="right hide-on-med-and-down">
-                            {this.renderLogin()}
-                        </ul>
-                    </div>
-                </nav>
+            <nav>
+                <div className="nav-wrapper">
+                    <Link
+                        to={this.props.auth ? '/surveys' : '/'}
+                        className="left brand-logo"
+                    >
+                        Emaily
+                    </Link>
+                    <ul id="nav-mobile" className="right hide-on-med-and-down">
+                        {this.renderLogin()}
+                    </ul>
+                </div>
+            </nav>
         )
     }
 };
