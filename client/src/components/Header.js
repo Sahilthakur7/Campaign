@@ -16,6 +16,7 @@ class Header extends Component {
                 return (
                     <Fragment>
                         <li><Payments /></li>
+                        <li style={{margin: '0 10px'}}>Credits: {this.props.auth.credits}</li>
                         <li><a href="/api/logout">Logout</a></li>
                     </Fragment>
                 );
