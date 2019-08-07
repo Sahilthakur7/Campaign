@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-import RecipientSchema from './recipient';
+import recipientSchema from './Recipient';
 
 const SurveySchema = new mongoose.Schema({
     title: String,
@@ -8,7 +8,7 @@ const SurveySchema = new mongoose.Schema({
     recipients: [RecipientSchema],
     yes: {type: Number, default: 0},
     no: {type: Number, default: 0},
-    _user: {types: Schema.Types.ObjectId , ref: 'User'},
+    _user: {type: Schema.Types.ObjectId , ref: 'User'},
     dateSent: Date,
     lastResponded: Date
 });
