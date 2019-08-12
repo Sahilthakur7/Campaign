@@ -1,16 +1,16 @@
 const mongoose = require('mongoose');
-import recipientSchema from './Recipient';
+const recipientSchema = require('./Recipient');
 
 const SurveySchema = new mongoose.Schema({
     title: String,
     body: String,
     subject: String,
-    recipients: [RecipientSchema],
+    recipients: [recipientSchema],
     yes: {type: Number, default: 0},
     no: {type: Number, default: 0},
-    _user: {type: Schema.Types.ObjectId , ref: 'User'},
+    _user: {type: mongoose.Schema.Types.ObjectId , ref: 'User'},
     dateSent: Date,
     lastResponded: Date
 });
 
-mongoose.model('Survey', SurveySchema);
+mongoose.model('surveys', SurveySchema);
