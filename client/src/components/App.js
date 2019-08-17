@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import * as actions from '../actions';
 import Header from './Header';
 import Landing from './Landing';
+import Dashboard from './Dashboard';
 
 class App extends React.Component {
 
@@ -17,6 +18,7 @@ class App extends React.Component {
                 <BrowserRouter>
                     <Header />
                     <Route exact path="/" component={Landing} />
+                    <Route exact path="/surveys" component={Dashboard} />
                 </BrowserRouter>
             </div>
         );
