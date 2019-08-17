@@ -6,6 +6,8 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import reduxThunk from 'redux-thunk';
 import reducers from './reducers';
+
+// For development only
 import axios from 'axios';
 
 window.axios = axios;
