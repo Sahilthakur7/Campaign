@@ -15,7 +15,6 @@ const FIELDS = [
 
 class SurveyForm extends React.Component {
     renderFields = () => {
-
         const formFields = FIELDS.map((field) => {
             return(
             <Field key={`${field.name}`} name={`${field.name}`} label={`${field.label}`} component={SurveyField} type="text" />
